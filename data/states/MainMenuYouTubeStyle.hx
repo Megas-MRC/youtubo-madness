@@ -2394,6 +2394,11 @@ function updateLayerOrder()
 
 function update(elapsed:Float)
 {
+	if (FlxG.keys.pressed.TAB) {
+	persistentUpdate = false;
+	persistentDraw = true;
+	openSubState(new ModSwitchMenu());
+	}
 	FlxG.mouse.visible = true;
 
 

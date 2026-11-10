@@ -11,7 +11,7 @@ import openfl.events.KeyboardEvent;
 import openfl.ui.Keyboard;
 
 using StringTools;
-
+import funkin.menus.ModSwitchMenu;
 
 /*
  * ============================================================
@@ -6298,6 +6298,11 @@ function update(
 	elapsed:Float
 )
 {
+	if (FlxG.keys.pressed.TAB) {
+	persistentUpdate = false;
+	persistentDraw = true;
+	openSubState(new ModSwitchMenu());
+	}
 	if (transitioning)
 		return;
 
@@ -6607,4 +6612,5 @@ function goBack()
 	{
 		transitioning = false;
 	}
+
 }
